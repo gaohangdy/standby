@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <title>和英管理系统</title>
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="resources/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="resources/css/prettyPhoto.css" rel="stylesheet"/>
+        <link href="resources/css/price-range.css" rel="stylesheet"/>
+        <link href="resources/css/animate.css" rel="stylesheet"/>
+        <link href="resources/css/main.css" rel="stylesheet"/>
+        <link href="resources/css/responsive.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <section id="form"><!--form-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <div th:if="${param.error}">
+                            Invalid username and password.
+                        </div>
+                        <div th:if="${param.logout}">
+                            You have been logged out.
+                        </div>                        
+                        <div class="login-form"><!--login form-->
+                            <h2>用户登录</h2>
+                            <form action="login" method="post">
+                                <input type="text" name="username" placeholder="用户名" />
+                                <input type="password" name="password" placeholder="密码" />
+                                <span>
+                                    <input type="checkbox" class="checkbox"/> 
+                                        自动登录
+                                </span>
+                                <button type="submit" class="btn btn-default">登录</button>
+                            </form>
+                        </div><!--/login form-->
+                    </div>
+                </div>
+            </div>
+        </section><!--/form-->        
+    </body>
+</html>
